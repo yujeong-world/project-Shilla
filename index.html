@@ -25,10 +25,10 @@
 
     <!-- gshap 애니메이션 -->
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
-      integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
     ></script>
 
 
@@ -170,10 +170,42 @@
     </div>
 
     <div class="video-area header-content">
-        <video class="main-video" autoplay loop mute>
+        <!--비디오 영역-->
+        <video class="main-video" autoplay loop muted>
             <source src="./slila.mp4">
         </video>
+
+        <!--날자폼-->
+        <div class="date-form">
+            <div class="wrapper">
+                <label for="datepicker1">CHECK IN
+                    <input type="text" id="datepicker1" autocomplete="off" placeholder="날짜 선택">
+                </label>	
+            </div>
+            <div class="wrapper wrapper2">
+                <label for="datepicker2">CHECK OUT
+                    <input type="text" id="datepicker2" autocomplete="off" placeholder="날짜 선택">
+                </label>	
+            </div>
+            <div class="room-selector selector">
+                <label for="room">Room
+                    <input type="number" id="Room" value="1" min="1" max="10">
+                </label>
+            </div>
+            <div class="adult-selector selector">
+                <label for="adult">Adult
+                    <input type="number" id="Adult" value="1" min="1" max="4">
+                </label>
+            </div>
+            <div class="child-selector selector">
+                <label for="child">Adult
+                    <input type="number" id="child" value="0" min="0" max="4">
+                </label>
+            </div>
+            <div class="serch"><a href="#">Serch</a></div>
+        </div>
     </div>
+
 </header>
 
 <!-- <div class="sticky">
@@ -426,5 +458,9 @@ while (parent) {
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="./hambuger-btn.js"></script>
+
+    <!--date js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 </body>
 </html>

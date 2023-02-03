@@ -53,3 +53,19 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, "show")
     .addTo(new ScrollMagic.Controller());
 });
+
+/* 날자 태그 */
+// INCLUDE JQUERY & JQUERY UI 1.12.1
+$( function() {
+	$( "#datepicker1" ).datepicker({
+		dateFormat: "dd-mm-yy"
+		,	duration: "fast"
+	});
+} );
+
+$( function() {
+	$( "#datepicker2" ).datepicker({
+		dateFormat: "dd-mm-yy"
+		,	duration: "fast"
+	});
+} );
