@@ -42,7 +42,7 @@ nextEl: ".promotion .swiper-next", // 다음 버튼 선택자
     },
 });
 
-/*애니메이션 */
+/* 애니메이션 */
 const spyEls = document.querySelectorAll("section.scroll-spy");
 spyEls.forEach(function (spyEl) {
   new ScrollMagic.Scene({
