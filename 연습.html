@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.selectbox {
+  position: relative;
+  width: 60px;  /* 너비설정 */
+  /* border: 1px solid #999;  */ /* 테두리 설정 */
+  z-index: 1;
+}
+
+.selectbox:before {  /* 화살표 대체 */
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  width: 0;
+  height: 0;
+  margin-top: -1px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+}
+
+.selectbox label {
+  position: absolute;
+  top: 1px;  /* 위치정렬 */ 
+  left: 5px;  /* 위치정렬 */
+  padding: .8em .5em;  /* select의 여백 크기 만큼 */
+  color: #999;  
+  z-index: -1;  /* IE8에서 label이 위치한 곳이 클릭되지 않는 것 해결 */
+}
+
+.selectbox select {
+  width: 100%; 
+  height: auto;  /* 높이 초기화 */
+  line-height: normal;  /* line-height 초기화 */
+  font-family: inherit;  /* 폰트 상속 */
+  padding: .8em .5em;  /* 여백과 높이 결정 */
+  border: 0;
+  opacity: 0;  /* 숨기기 */
+  filter:alpha(opacity=0);  /* IE8 숨기기 */
+  -webkit-appearance: none; /* 네이티브 외형 감추기 */
+  -moz-appearance: none;
+  appearance: none;
+}
+    </style>
+</head>
+<body>
+<!--     <form action="#">
+            <section name="Room" size="3">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </section>
+    </form> -->
+<!--     <form action="" method="">   
+            <label for="#">지역</label>
+            <select multiple>
+                <optgroup label="서울">
+                    <option>강서</option>
+                    <option>강북</option>
+                    <option>강남</option>
+                </optgroup>
+                <optgroup label="경기도">
+                    <option>부천</option>
+                    <option>인천</option>
+                    <option>광주</option>
+                </optgroup>
+            </select>
+    </form> -->
+<!-- <label for="d">room</label>
+<select name="job">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+</select>
+
+<div class="room-selector selector">
+        <label for="room">Room</label>
+            <section name="Room">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </section>
+</div>
+ -->
+ <div class="selectbox">
+
+    <select id="ex_select">
+        <option selected>1</option>
+        <option>한국</option>
+        <option>일본</option>
+        <option>중국</option>
+    </select>
+</div>
+</body>
+</html>

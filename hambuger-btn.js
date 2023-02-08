@@ -7,20 +7,40 @@ $('.buger-btn').click(function(ev){
 
 //스티키메뉴
 $(function() {
-    var lnb = $("#menu2").offset().top;
+    var lnb = $("#main-box").offset().top;
    
     $(window).scroll(function() {
     var window = $(this).scrollTop();
 
     if(lnb < window) {
-        $("#menu2").addClass("fixed");
-        $("#menu2").addClass("block")
+        $("#main-box").addClass("fixed");
+        $("#main-box").addClass("block")
         }else{
-            $("#menu2").removeClass("fixed");
-            $("#menu2").removeClass("block")
+            $("#main-box").removeClass("fixed");
+            $("#main-box").removeClass("block")
       }
     })
   });
+
+
+  var menu = $("#main-menu"); //ul
+var menu_list = menu.children("li"); //ul하위메뉴 li 1차메뉴 
+/* menu_list.css('background-color', 'red');
+console.log(menu_list);
+ */
+menu_list.on("mouseenter", function () {
+	var target = $(this);
+	target.addClass("slide");
+	target.children("div").css("z-index", "100").stop().slideDown(500, function () {
+		menu_list.not(".slide").children("div").hide();
+		target.removeClass("slide");
+	});
+});
+menu_list.on("mouseleave", function () {
+	var target = $(this);
+	target.children("div").css("z-index", "1");
+	menu_list.children("div").hide();
+});
 
   /*슬라이드 */
   var swiper = new Swiper(".mySwiper", {

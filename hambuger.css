@@ -30,7 +30,7 @@ body{
 }
 .buger-btn span{
     position: absolute;
-    height: 8px;
+    height: 4px;
     border-radius: 4px;
     width: 100%;
     background: rgb(83, 64, 57);
@@ -61,7 +61,8 @@ body{
     background-color: rgb(62, 43, 44);
     z-index: 250;
 }
-/*  */
+/* 풀페이지 메뉴 */
+#wrap{width: 100%;}
 .overlay{
     position: fixed;
     background-color: #f1e3c4;
@@ -74,7 +75,7 @@ body{
     display: flex;
     flex-direction: row;
     transition: 0.3s;
-    z-index: 3;
+    z-index: 2;
 }
 .overlay nav ul{
     list-style: none;padding: 0;margin: 0;
@@ -83,6 +84,7 @@ body{
 .overlay nav>ul{
     position: absolute;
     left: 300px;
+    z-index: 13;
 }
 .overlay nav ul li.main-menu{
     margin-top: 200px;
@@ -90,9 +92,9 @@ body{
     opacity: 0;
     width: 200px;
     height: 30px;
-    /* background-color: rgb(83, 75, 61); */
     text-align: center;
     font-family: 'Playfair Display';
+    font-size: 50px;
 }
 .overlay nav ul li a{
     text-decoration: none;
@@ -104,9 +106,6 @@ body{
 .overlay nav ul li .main-menu-text1{
     font-size: 25px;
 } 
-/* .overlay .menu ul .main-menu .sub-menu-container li{
-    font-size: 10px;
-} */
 .overlay nav ul li a:hover{
     opacity: 1;
 }
@@ -116,7 +115,7 @@ body{
 }
 .overlay.visible{
     height: 100%;
-    opacity: 85%;
+    opacity: 100%;
     visibility: visible;
 }
 .overlay.visible nav ul li{
@@ -144,12 +143,10 @@ body{
 .overlay .menu .main-menu .sub-menu-container{
     width: 200px;
     height: 300px;
-    /* background-color: #fff; */
     display: flex;
     flex-direction: column;
 }
 .overlay .menu .main-menu .sub-menu-container li{
-    /* background-color: aqua; */
     margin-top: 20px;
     font-family: 'Roboto';
 }
@@ -161,133 +158,119 @@ body{
     position: absolute;
     left: 800px;
 } 
-
-/*영상*/
-/* .youtube{position: relative;height: 100vh;overflow: hidden;max-width: 100%;}
-.youtube .youtube__area{width: 100%;height: 100vh;}
-.youtube .youtube__area::before{
-  content: "";display: block;width: 100%;height: 0;padding-bottom: 56.25%;max-width: 100%;
-}
-.youtube .youtube__area #player{width: 100%;height: 100%;position: absolute;top: 0;left: 0;bottom: 0;}
-.youtube .youtube__area .youtube__cover{
-    background: transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-} */
-
-.video-area{background-color: rgb(241, 227, 196);
-height: 100vh;width: 100%; }
+/*비디오 영역*/
+.video-area{
+height: 100vh;width: 100%;}
 .video-area .main-video{
     height: 100vh;
     width: 100%;
+    object-fit: cover;
 }
-
-/*스티키메뉴고정*/
-/* .fixed-menu{
-    position: sticky;
-    top:0;
-    background: #8a4baf;
-    width: 100%;
-    height: 60px;
-    z-index: 500;
-}
-.fixed-menu ul{
-    list-style: none;
-    display: flex;
-}
-.fixed-menu ul li{
- margin-left: 10px;   
-} */
-
-
-
 .welcom2{
-    width: 1200px;
+    width: 100%;
     height: 500px;
     margin: auto;
     padding: 0;
     background-color: #4d3306;
 }
 
-#menu2.fixed{
+#main-box.fixed{
     position: fixed;
-    left: 0;
-    top: -60px;
+   /*  left: 0;
+    top: 0; */
     width: 100%;
+    z-index: 999999;
 }
-#menu2.block{
+#main-box.block{
     display: block;
     background-color: rgb(241, 227, 196);
 }
-#menu2>ul{
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    top: 40px;
-    background-color: rgba(241, 227, 196, 0.5);
-    height: 70px;
-    width: 1920px;
-    z-index: 99999;
+#main-box{
+    display: none;
+    width: 100%;
 }
-#menu2>ul>li{
+#main-menu.none{
+    display: none;
+}
+#main-menu{
+    display: flex !important;
     list-style: none;
-    width: 140px;
-    margin-top: 25px;
-    margin-left: 10px;
+    height: 60px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: #f1e3c4;
+    /* display: none; */
 }
-#menu2>ul>li>a{
-    color: black;
+#main-menu .menu-img{width: 230px;height: 50px; margin-left: 20px; margin-left: 60px; /* position: relative */;}
+#main-menu .reservation{width: 150px; height: 50px;text-align: center; margin-right: 20px;}
+#main-menu .reservation a{text-decoration: none; display: block;width: 150px; height: 40px;border: 1px solid #3E3E3E;line-height: 40px;margin-top: 15px; font-family:'Playfair Display'; color: #3E3E3E;
+    transition: all 0.8s;}
+#main-menu .reservation:hover a{background-color: rgba(201, 131, 9,70%);
+color: #fff;}
+#main-menu .item .item-name{
+    width: 150px;
+    height: 69px;
+    text-align: center;
+    font-family: 'Playfair Display';
+    font-size: 18px;
+    color: #3E3E3E;
+    display: block;
     text-decoration: none;
-    cursor: pointer;
-    z-index: 999;
+    font-size: 17px;
+    line-height: 70px;
+    margin: 0 35px;
 }
-#menu2{
-    display: none;
-}
-#menu2 .menu2-main ul.sub-menu2{
-    /* display: flex; */
-    flex-direction: row;
-    display: none;
-    width: 1920px;
-    height: auto;
+#main-menu:nth-child(1) .item .item-name{margin-left: 0px;}
+#main-menu .logo-img{text-align: center;}
+#main-menu .item .content-menu{
     background-color: #f1e3c4;
     position: absolute;
-    left: 0px;
-    top: 60px;
-    transition: all 0.5s;
-    
+    width: 100%;
+    left: 0;
 }
-#menu2 .menu2-main li .sub-menu2 li{
-    list-style: none; 
-    width: 180px;
-    height: 40px;
-    margin-top: 20px;
-    /* background-color: aquamarine; */
-    float: left;
-    margin-left: 10px;
-    transition: all 0.5s;
+#main-menu .item .content-menu .inner{
+    display: flex;
+    width: 100%;
+    background-color: #f1e3c4;
 }
-#menu2 .menu2-main>li>a{
-    font-family: 'Playfair Display';
+#main-menu .item .content-menu .inner li{
+    list-style: none;
+    margin: 50px 30px;
+    /* margin: 50px 20px; */
 }
-#menu2 .menu2-main>li{
-    width: 150px;
-    height: auto;
-   /*  background-color: aqua; */
-    margin-left: 130px;
-    text-align: center;
+#main-menu .item .content-menu .inner li a{
+    text-decoration: none;
+    font-family:'Roboto';
+    font-size: 17px;
+    color: #3E3E3E;   
+}
+#main-menu .item a:hover{
+    color:#c98309;
+    border-bottom: 1px solid #c98309;
+}
+#main-menu .item .content-menu .inner li a:hover{
+    color:#c98309;
+}
+#main-menu .item:nth-child(3) .content-menu .inner{
+    margin-left: 420px;
+}
+#main-menu .item:nth-child(4) .content-menu .inner{
+    margin-left: 350px;
+}
+#main-menu .item:nth-child(5) .content-menu .inner{
+    margin-left: 720px;
+}
+#main-menu .item:nth-child(6) .content-menu .inner{
+    margin-left: 800px;
+}
+#main-menu .item:nth-child(7) .content-menu .inner{
+    margin-left: 1100px;
+}
+#main-menu .item:nth-child(8) .content-menu .inner{
+    margin-left: 1360px;
 }
 
-#menu2 .sub-menu2 li a{
-    text-decoration: none;
-    
-}
-#menu2 .menu2-main>li:hover .sub-menu2{
-    display: block;
-}
 
 /*웰컴 부분*/
 .welcom-container, .welcom-box{
@@ -389,7 +372,6 @@ height: 100vh;width: 100%; }
     margin-left: 50px;
     height: 40px;
     font-family: 'Playfair Display';
-/*     background-color: aqua; */
     padding-top: 50px;
 }
 
@@ -405,8 +387,9 @@ height: 100vh;width: 100%; }
 
 }
 .main-slid{
-    width: 1920px;
+    width: 100%;
     height: 900px;
+    overflow: hidden;
    /*  background-color: rgb(166, 219, 243); */
 }
 
@@ -431,7 +414,7 @@ height: 100vh;width: 100%; }
     height: 1px;
     background-color: #f1e3c4;
     border-radius: 10px;
-    margin: 5px 0;
+    margin: 5px 0s;
 }
 .main-slid .mySwiper .swiper-slide .slid-text .slid-text2{
     font-size: 15px;
@@ -452,23 +435,22 @@ height: 100vh;width: 100%; }
     height: 2px;
     border-radius: 10px;
     background-color: #f1e3c4;
-    margin-left: 350px;
+    margin: 0 auto;
 }
 
 /*멤버십 부분*/
 .membership{
-    width: 1920px;
+    width: 100%;
     height: 400px;
     background: url(./img/membership.png) no-repeat fixed center;
     background-size: cover;
 }
 
 /*이벤트 부분*/
+.event .event-box{width: 1200px;height: 1800px;margin: auto;}
 .event{
-    width: 1200px;
-    height: 1800px;
-    margin: auto;
-    /* background-color: aquamarine; */
+width: 100%;
+height: 1800px;
 }
 .event .event-main-text{
     font-size: 25px;
@@ -556,17 +538,72 @@ height: 100vh;width: 100%; }
 .show .back-to-positon.delay-3{transition-delay: 0.6s;}
 .show .back-to-positon.delay-4{transition-delay: 0.9s;}
 
-
+/*글씨 등장 영역*/
+.video-area .text_anmation {
+    display:flex;
+    overflow:hidden;
+    white-space:nowrap;
+    width: 450px;
+    height: 75px;
+    position: absolute;
+    top: 300px;
+    z-index: 1;
+    left: 735px;
+    font-size: 45px;
+    font-family: 'Playfair Display';
+    color: #fff;
+  }
+  
+  
+  .video-area .text_anmation div:first-of-type {    /* For increasing performance 
+                         ID/Class should've been used. 
+                         For a small demo 
+                         it's okaish for now */
+    animation: showup 7s;
+    margin: 0;
+    margin-right: 30px;
+  }
+  
+  .video-area .text_anmation div:last-of-type {
+    width:230px;
+    animation: reveal 7s;
+  }
+  
+  .video-area .text_anmation span.show2 {
+    margin-left:0px;
+    animation: slidein 7s;
+  }
+  
+  @keyframes showup {
+      0% {opacity:0;}
+      20% {opacity:1;}
+      80% {opacity:1;}
+      100% {opacity:1;}
+  }
+  
+  @keyframes slidein {
+      0% { margin-left:-800px; }
+      20% { margin-left:-800px; }
+      35% { margin-left:0px; }
+      100% { margin-left:0px; opacity: 1; }
+  }
+  
+  @keyframes reveal {
+      0% {opacity:0;width:0px;}
+      20% {opacity:1;width:0px;}
+      30% {width:230px;}
+      80% {opacity:1;}
+      100% {opacity:1;}
+  }
 /*캘린더*/
 .header-content{position: relative;}
 .header-content .date-form{
     width: 1200px;
     height: 150px;
-    /* background-color: #997321; */
     display: flex;
     flex-direction: row;
     position: absolute;
-    top: 400px;
+    top: 450px;
     left: 360px;
 }
 .wrapper{
@@ -614,7 +651,7 @@ label {
     font-family: 'Playfair Display';
 	display: block;
 	margin-bottom: 0.5rem;
-	color: #B0BEC5;
+	color: #fff;
 	/* border: 1px solid #ECEFF1; */
 	padding: 0.5rem 0.75rem;
 	border-radius: 0.5rem;
@@ -633,7 +670,6 @@ input {
 	width: 100%;
 	margin-top: 0.5rem;
     background: transparent;
-   
 }
 input:focus {outline: none;}
 #ui-datepicker-div {
@@ -720,15 +756,56 @@ table {
 	font-weight: 400;
 	font-size: 0.75rem;
 }
-/*달력 위치 바꾸기*/
-/* .wrapper2 #ui-datepicker-div{
+.date-form .selector .selectbox {
+    position: relative;
+    width: 50px;  /* 너비설정 */
+    /* border: 1px solid #999; */  /* 테두리 설정 */
+    z-index: 1;
+    margin-left: 15px;
+  }
+  .date-form .selector .selectbox:before {  /* 화살표 대체 */
+    content: "";
     position: absolute;
-    left: 800px;
-    top: 509px;
-    display: block;
-    z-index: 3;
-} */
+    top: 50%;
+    right: 15px;
+    width: 0;
+    height: 0;
+    margin-top: -1px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333;
+  }
+  .date-form .selector .selectbox label {
+    position: absolute;
+    top: 1px;  /* 위치정렬 */ 
+    left: 5px;  /* 위치정렬 */
+    padding: .8em .5em;  /* select의 여백 크기 만큼 */
+    color: #999;  
+    z-index: -1;  /* IE8에서 label이 위치한 곳이 클릭되지 않는 것 해결 */
+  }
+  .date-form .selector .selectbox select {
+    width: 100%; 
+    height: auto;  /* 높이 초기화 */
+    line-height: normal;  /* line-height 초기화 */
+    font-family: inherit;  /* 폰트 상속 */
+    padding: .8em .5em;  /* 여백과 높이 결정 */
+    border: 0;
+    opacity: 0;  /* 숨기기 */
+    filter:alpha(opacity=0);  /* IE8 숨기기 */
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+  }
 
+  .date-form .selector .title{font-size: 20px;
+  font-family: 'Playfair Display';
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  /* border: 1px solid #ECEFF1; */
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+}
 /*플랙스 박스영역*/
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap");
 ::-webkit-scrollbar {
@@ -737,7 +814,7 @@ table {
   height: 8px;
 }
 .container {
-    width: 1920px;
+    width: 100%;
     height: 100vh;
     margin-top: 200px;
     margin-bottom: 120px;
@@ -753,32 +830,32 @@ table {
   /*   gap: 10px; */
 }
 .container .gallery .card {
-  position: relative;
-  height: 800px;
-  width: 100%;
-  flex: 1;
-  overflow: hidden;
-  /* border-radius: 15px; */
-  cursor: pointer;
-  filter: grayscale(80%);
-  transition: all 0.8s cubic-bezier(0.25, 0.4, 0.45, 1.4);
+    position: relative;
+    height: 800px;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+    /* border-radius: 15px; */
+    cursor: pointer;
+    filter: grayscale(80%);
+    transition: all 0.8s cubic-bezier(0.25, 0.4, 0.45, 1.4);
 }
 .container .gallery .card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 .container .gallery .card .info {
-  width: 500px;
-  position: absolute;
-  z-index: 3;
-  padding: 15px;
-  bottom: 200px;
-  left: 650px;
+    width: 500px;
+    position: absolute;
+    z-index: 3;
+    padding: 15px;
+    bottom: 200px;
+    left: 650px;
   /* opacity: 0; */
-  transition: opacity 1.5s cubic-bezier(0.25, 0.4, 0.45, 1.4);
-  text-align: center;
+    transition: opacity 1.5s cubic-bezier(0.25, 0.4, 0.45, 1.4);
+    text-align: center;
 }
 .container .gallery .card .info .title{
     font-family: 'Playfair Display';
@@ -812,21 +889,21 @@ table {
     transition: all 0.8s;
 }
 .container .gallery .card:hover {
-  flex: 2;
-  filter: none;
+    flex: 2;
+    filter: none;
 }
 .container .gallery .card:hover .info .title{
     transform: scale(1.8);
 }
 .container .gallery .card:hover .btn{
     opacity: 1;
-  }
+}
 .container .gallery .card:hover .btn:hover a{
     background-color: #fff;
     color: #3e3e3e;
 }
 @media only screen and (max-width: 768px) {
-  .container .gallery {
+    .container .gallery {
     wdith: 100%;
     margin: 10px auto;
     display: grid;
@@ -903,7 +980,7 @@ table {
 
 /*푸터영역*/
 footer{
-    width: 1920px;
+    width: 100%;
     height: 500px;
     background-color: #F1EBD6;
 }
